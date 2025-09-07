@@ -1,3 +1,12 @@
+export interface Users {
+  id: number;
+  name: string;
+  email: string;
+  password_hash: string;
+  created_at: string;
+  last_login: string;
+}
+
 export interface Invoices {
   id: number;
   invoice_number: string;

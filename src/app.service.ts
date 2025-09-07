@@ -1,15 +1,24 @@
 import { Injectable } from '@nestjs/common';
-import type { Invoices } from './sql.types';
+import type { Invoices, Users } from './sql.types';
 
 @Injectable()
 export class AppService {
   getHello(): string {
     // @sqlTypeName users
-    const sql = 'SELECT id FROM users;';
+    const sql = 'SELECT * FROM users;';
+    const users: Users = {
+      id: 0,
+      name: '',
+      email: '',
+      password_hash: '',
+      created_at: '',
+      last_login: '',
+    };
+    console.log(users);
     console.log(sql);
 
     // @sqlTypeName invoices
-    const sql2 = 'SELECT id FROM invoices;';
+    const sql2 = 'SELECT * FROM invoices;';
     const invoice: Invoices = {
       id: 0,
       invoice_number: '',
