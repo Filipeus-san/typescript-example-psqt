@@ -1,4 +1,4 @@
-interface Invoices {
+export interface Invoices {
   id: number;
   invoice_number: string;
   user_id: number;
