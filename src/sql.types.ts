@@ -4,18 +4,25 @@ export interface Users {
   email: string;
   password_hash: string;
   created_at: string;
-  last_login: string;
+  last_login?: string;
 }
 
-export interface Invoices {
-  id: number;
+export interface Sql2 {
+  invoice_id: number;
   invoice_number: string;
-  user_id: number;
   customer_name: string;
-  issue_date: string;
   due_date: string;
   total_amount: number;
   currency: string;
   status: string;
-  created_at: string;
+  user_id: number;
+  user_name: string;
+  user_email: string;
+  item_id: number;
+  item_description: string;
+  quantity: number;
+  unit_price: number;
+  vat_rate: number;
+  n_item_total?: number;
+  n_item_vat?: number;
 }
