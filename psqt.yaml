@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=./psqt_yaml_schema.json
 
-language: "typescript"
-sql_dialect: "mysql"
-app_path: "./src"
-migrations_path: "./migrations"
-indent: "spaces"
-end_line: "lf"
+language: typescript
+sql_dialect: mysql
+app_path: ./src
+migrations_path: ./migrations
+indent: spaces
+end_line: lf
 sufix: ""
 tab_width: 2
 
 typescript:
-  types_file: "./src/sql.types.ts"
-  datetime_type: "string"
+  types_file: ./src/sql.types.ts
+  datetime_type: string
