@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "sql_dialect": { "type": "string" },
+      "language": { "type": "string" },
+      "app_path": { "type": "string" },
+      "migrations_path": { "type": "string" },
+      "indent": { "type": "string", "enum": ["spaces", "tabs"] },
+      "end_line": { "type": "string", "enum": ["lf", "crlf"] },
+      "sufix": { "type": "string" },
+      "tab_width": { "type": "integer", "minimum": 1 },
+      "php": {
+        "type": "object",
+        "properties": {
+          "dto_path": { "type": "string" },
+          "namespace": { "type": "string" },
+          "property_visibility": { "type": "string", "enum": ["public", "protected", "private"] },
+          "declarate_property_constructor": { "type": "boolean" },
+          "enable_constructor": { "type": "boolean" },
+          "type_hint": { "type": "boolean" },
+          "enable_getters": { "type": "boolean" },
+          "enable_setters": { "type": "boolean" },
+          "enable_anotation_type": { "type": "boolean" },
+          "datetime_type": { "type": "string", "enum": ["string", "DateTime", "Carbon"] },
+          "enable_enum_columns": { "type": "boolean" },
+          "enum_namespace": { "type": "string" },
+          "enum_path": { "type": "string" }
+        },
+        "required": [
+          "dto_path",
+          "namespace",
+          "property_visibility",
+          "declarate_property_constructor",
+          "enable_constructor",
+          "type_hint",
+          "enable_getters",
+          "enable_setters",
+          "enable_anotation_type",
+          "datetime_type",
+          "enable_enum_columns",
+          "enum_namespace",
+          "enum_path"
+        ],
+        "additionalProperties": false
+      },
+      "typescript": {
+        "type": "object",
+        "properties": {
+          "types_file": { "type": "string" },
+          "datetime_type": { "type": "string", "enum": ["string", "Date", "ISO"] }
+        },
+        "required": ["types_file", "datetime_type"],
+        "additionalProperties": false
+      }
+    },
+    "required": ["sql_dialect", "language", "app_path", "migrations_path", "indent", "end_line", "sufix", "tab_width"],
+    "additionalProperties": false
+  }
