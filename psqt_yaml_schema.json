@@ -2,8 +2,22 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "sql_dialect": { "type": "string" },
-      "language": { "type": "string" },
+      "sql_dialect": { "type": "string",       "enum": [
+        "ansi",
+        "bigquery",
+        "clickhouse",
+        "databricks",
+        "duckdb",
+        "generic",
+        "hive",
+        "msSql",
+        "mysql",
+        "postgresSql",
+        "redshift",
+        "snowflake",
+        "sqlite"
+      ]},
+      "language": { "type": "string", "enum": ["php", "typescript"] },
       "app_path": { "type": "string" },
       "migrations_path": { "type": "string" },
       "indent": { "type": "string", "enum": ["spaces", "tabs"] },
@@ -22,7 +36,7 @@
           "enable_getters": { "type": "boolean" },
           "enable_setters": { "type": "boolean" },
           "enable_anotation_type": { "type": "boolean" },
-          "datetime_type": { "type": "string", "enum": ["string", "DateTime", "Carbon"] },
+          "datetime_type": { "type": "string" },
           "enable_enum_columns": { "type": "boolean" },
           "enum_namespace": { "type": "string" },
           "enum_path": { "type": "string" }
@@ -48,7 +62,7 @@
         "type": "object",
         "properties": {
           "types_file": { "type": "string" },
-          "datetime_type": { "type": "string", "enum": ["string", "Date", "ISO"] }
+          "datetime_type": { "type": "string" }
         },
         "required": ["types_file", "datetime_type"],
         "additionalProperties": false
