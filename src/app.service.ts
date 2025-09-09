@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import type { Sql2, Users } from './sql.types';
+import type { InsertUser, Sql2, UpdateUser, Users } from './sql.types';
 
 @Injectable()
 export class AppService {
@@ -64,6 +64,36 @@ ORDER BY i.id, ii.id; `;
     console.log(invoice);
     console.log(sql2);
 
-    return sql;
+    // @sqlTypeName insertUser
+    const sql3 = `INSERT INTO users (name, email, password_hash, last_login)
+VALUES (
+    ?,
+    ?,
+    ?, -- bcrypt hash hesla
+    NOW()
+);`;
+
+    const insertUser: InsertUser = {
+      name: '',
+      email: '',
+      password_hash: '',
+    };
+    console.log(insertUser);
+    console.log(sql3);
+
+    // @sqlTypeName updateUser
+    const sql4 = `UPDATE users
+SET 
+    name = ?,
+    last_login = NOW()
+WHERE email = ?;`;
+
+    const updateUser: UpdateUser = {
+      name: '',
+    };
+    console.log(updateUser);
+    console.log(sql4);
+
+    return 'Hello world';
   }
 }

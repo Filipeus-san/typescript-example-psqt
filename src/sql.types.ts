@@ -26,3 +26,15 @@ export interface Sql2 {
   n_item_total: number;
   n_item_vat: number;
 }
+
+export interface InsertUser {
+  name: string;
+  email: string;
+  password_hash: string;
+  last_login?: string;
+}
+
+export interface UpdateUser {
+  name: string;
+  last_login?: string;
+}
