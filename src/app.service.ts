@@ -1,22 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import type { InsertUser, Sql2, UpdateUser, Users } from './sql.types';
+import type { InsertUser, Sql2, UpdateUser } from './sql.types';
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    // @sqlTypeName users
-    const sql = 'SELECT * FROM users;';
-    const users: Users = {
-      id: 0,
-      name: '',
-      email: '',
-      password_hash: '',
-      created_at: '',
-      role: 'user',
-    };
-    console.log(users);
-    console.log(sql);
-
     // @sqlTypeName sql2
     const sql2 = `SELECT 
     i.id AS invoice_id,
@@ -70,7 +57,7 @@ ORDER BY i.id, ii.id; `;
 VALUES (
     ?,
     ?,
-    ?, -- bcrypt hash hesla
+    ?,
     NOW()
 );`;
 
