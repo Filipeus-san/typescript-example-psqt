@@ -12,6 +12,7 @@ export class AppService {
       email: '',
       password_hash: '',
       created_at: '',
+      role: 'user',
     };
     console.log(users);
     console.log(sql);

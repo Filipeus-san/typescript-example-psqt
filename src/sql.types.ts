@@ -5,6 +5,7 @@ export interface Users {
   password_hash: string;
   created_at: string;
   last_login?: string;
+  role: 'user' | 'admin' | 'moderator';
 }
 
 export interface Sql2 {
