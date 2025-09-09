@@ -36,7 +36,7 @@ export class AppService {
     (ii.quantity * ii.unit_price) AS n_item_total,
     ((ii.quantity * ii.unit_price) * (ii.vat_rate / 100)) AS n_item_vat
 FROM invoices i
-JOIN users u 
+LEFT JOIN users u 
     ON i.user_id = u.id
 JOIN invoice_items ii 
     ON i.id = ii.invoice_id
@@ -58,6 +58,8 @@ ORDER BY i.id, ii.id; `;
       quantity: 0,
       unit_price: 0,
       vat_rate: 0,
+      n_item_total: 0,
+      n_item_vat: 0,
     };
     console.log(invoice);
     console.log(sql2);
