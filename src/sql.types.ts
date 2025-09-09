@@ -37,5 +37,6 @@ export interface InsertUser {
 
 export interface UpdateUser {
   name: string;
+  role: 'user' | 'admin' | 'moderator';
   last_login?: string;
 }

@@ -86,11 +86,13 @@ VALUES (
     const sql4 = `UPDATE users
 SET 
     name = ?,
+    role = ?,
     last_login = NOW()
 WHERE email = ?;`;
 
     const updateUser: UpdateUser = {
       name: '',
+      role: 'user',
     };
     console.log(updateUser);
     console.log(sql4);
