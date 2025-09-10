@@ -56,8 +56,8 @@ ORDER BY i.id, ii.id; `;
     const sql3 = `INSERT INTO users (name, email, password_hash, last_login)
 VALUES (
     ?,
-    ?,
-    ?,
+    "",
+    "",
     NOW()
 );`;
 
@@ -72,10 +72,10 @@ VALUES (
     // @sqlTypeName updateUser
     const sql4 = `UPDATE users
 SET 
-    name = ?,
-    role = ?,
+    name = "",
+    role = "",
     last_login = NOW()
-WHERE email = ?;`;
+WHERE email = "";`;
 
     const updateUser: UpdateUser = {
       name: '',

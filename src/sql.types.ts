@@ -1,15 +1,15 @@
 export interface Users {
-  id: number;
+  id?: number;
   name: string;
   email: string;
   password_hash: string;
   created_at: string;
   last_login?: string;
-  role: 'user' | 'admin' | 'moderator';
+  role: string;
 }
 
 export interface Sql2 {
-  invoice_id: number;
+  invoice_id?: number;
   invoice_number: string;
   customer_name: string;
   due_date: string;
@@ -19,7 +19,7 @@ export interface Sql2 {
   user_id?: number;
   user_name?: string;
   user_email?: string;
-  item_id: number;
+  item_id?: number;
   item_description: string;
   quantity: number;
   unit_price: number;
@@ -37,6 +37,6 @@ export interface InsertUser {
 
 export interface UpdateUser {
   name: string;
-  role: 'user' | 'admin' | 'moderator';
+  role: string;
   last_login?: string;
 }

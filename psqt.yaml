@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./psqt_yaml_schema.json
 
 language: typescript
-sql_dialect: mysql
+sql_dialect: sqlite
 app_path: ./src
 migrations_path: ./migrations
 indent: spaces
